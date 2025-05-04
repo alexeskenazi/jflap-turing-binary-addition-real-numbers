@@ -16,6 +16,13 @@
 		<transition>
 			<from>0</from>
 			<to>1</to>
+			<read>n</read>
+			<write>$</write>
+			<move>S</move>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
 			<read>c</read>
 			<write>$</write>
 			<move>S</move>
@@ -78,10 +85,10 @@
 		</transition>
 		<transition>
 			<from>0</from>
-			<to>1</to>
-			<read>n</read>
-			<write>$</write>
-			<move>S</move>
+			<to>0</to>
+			<read>z</read>
+			<write>z</write>
+			<move>L</move>
 		</transition>
 		<note>
 			<text>Rewind to the beginning
@@ -89,7 +96,7 @@ if $ leave $
 if c replace with $
 if n replace with $</text>
 			<x>213.0</x>
-			<y>18.0</y>
+			<y>22.0</y>
 		</note>
 	</automaton>
 </structure>
