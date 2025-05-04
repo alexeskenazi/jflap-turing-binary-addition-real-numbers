@@ -468,6 +468,13 @@
 			<move>L</move>
 		</transition>
 		<transition>
+			<from>42</from>
+			<to>42</to>
+			<read>.</read>
+			<write>.</write>
+			<move>L</move>
+		</transition>
+		<transition>
 			<from>13</from>
 			<to>13</to>
 			<read>.</read>
@@ -505,6 +512,13 @@
 		<transition>
 			<from>34</from>
 			<to>34</to>
+			<read>.</read>
+			<write>.</write>
+			<move>L</move>
+		</transition>
+		<transition>
+			<from>37</from>
+			<to>37</to>
 			<read>.</read>
 			<write>.</write>
 			<move>L</move>
@@ -1602,6 +1616,13 @@
 			<move>R</move>
 		</transition>
 		<transition>
+			<from>28</from>
+			<to>39</to>
+			<read>z</read>
+			<write>.</write>
+			<move>L</move>
+		</transition>
+		<transition>
 			<from>15</from>
 			<to>17</to>
 			<read>.</read>
@@ -1669,13 +1690,6 @@
 			<to>19</to>
 			<read>#</read>
 			<write>#</write>
-			<move>R</move>
-		</transition>
-		<transition>
-			<from>28</from>
-			<to>39</to>
-			<read/>
-			<write/>
 			<move>R</move>
 		</transition>
 		<transition>
@@ -1882,7 +1896,7 @@ if n replace with $</text>
 		<note>
 			<text>c=n</text>
 			<x>1028.0</x>
-			<y>349.0</y>
+			<y>352.0</y>
 		</note>
 		<note>
 			<text>input looks like this:
@@ -1891,12 +1905,12 @@ $01010.0000#01111.0001#zzzzzzzzzz
 X, Y, and Z are the same size
 X,Y have an extra 0 at the beginning to allow for carry over bit</text>
 			<x>3.0</x>
-			<y>10.0</y>
+			<y>13.0</y>
 		</note>
 		<note>
 			<text>c=c</text>
 			<x>1015.0</x>
-			<y>543.0</y>
+			<y>546.0</y>
 		</note>
 	</automaton>
 </structure>
