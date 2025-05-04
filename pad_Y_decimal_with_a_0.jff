@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>
+	<type>turing</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="q0">
+			<x>75.0</x>
+			<y>144.0</y>
+			<label>Go to the first #</label>
+			<initial/>
+		</state>
+		<state id="1" name="q1">
+			<x>230.0</x>
+			<y>140.0</y>
+			<label>Go to the ending #</label>
+		</state>
+		<state id="2" name="q2">
+			<x>484.0</x>
+			<y>139.0</y>
+		</state>
+		<state id="3" name="q3">
+			<x>643.0</x>
+			<y>140.0</y>
+			<label>Rewind</label>
+		</state>
+		<state id="4" name="q4">
+			<x>857.0</x>
+			<y>142.0</y>
+			<final/>
+		</state>
+		<!--The list of transitions.-->
+		<transition>
+			<from>3</from>
+			<to>4</to>
+			<read>$</read>
+			<write>$</write>
+			<move>S</move>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>#</read>
+			<write>#</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>3</to>
+			<read>#</read>
+			<write>#</write>
+			<move>L</move>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>3</to>
+			<read>0</read>
+			<write>0</write>
+			<move>L</move>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>3</to>
+			<read>1</read>
+			<write>1</write>
+			<move>L</move>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>3</to>
+			<read>.</read>
+			<write>.</write>
+			<move>L</move>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read>#</read>
+			<write>0</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>3</to>
+			<read/>
+			<write>#</write>
+			<move>S</move>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>$</read>
+			<write>$</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>0</read>
+			<write>0</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>1</read>
+			<write>1</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>.</read>
+			<write>.</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>0</read>
+			<write>0</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>1</read>
+			<write>1</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>.</read>
+			<write>.</write>
+			<move>R</move>
+		</transition>
+		<note>
+			<text>replace # with 0 pad</text>
+			<x>304.0</x>
+			<y>144.0</y>
+		</note>
+		<note>
+			<text>put a new ending #</text>
+			<x>498.0</x>
+			<y>151.0</y>
+		</note>
+		<note>
+			<text>Input $101.01#1.0111# 
+Adds a 0 to the end of Y
+Example: $101.01#1.01110#</text>
+			<x>42.0</x>
+			<y>216.0</y>
+		</note>
+	</automaton>
+</structure>
