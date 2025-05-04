@@ -48,10 +48,33 @@
 			<x>1055.0</x>
 			<y>338.0</y>
 		</block>
+		<block id="9" name="pad_X_integer_with_a_0">
+			<tag>pad_X_integer_with_a_0.jff</tag>
+			<x>122.0</x>
+			<y>538.0</y>
+		</block>
+		<block id="10" name="pad_Y_integer_with_a_0">
+			<tag>pad_Y_integer_with_a_0.jff</tag>
+			<x>394.0</x>
+			<y>542.0</y>
+		</block>
+		<block id="11" name="q11">
+			<tag>Machine11</tag>
+			<x>653.0</x>
+			<y>543.0</y>
+			<final/>
+		</block>
 		<!--The list of transitions.-->
 		<transition>
 			<from>5</from>
 			<to>6</to>
+			<read>$</read>
+			<write>$</write>
+			<move>S</move>
+		</transition>
+		<transition>
+			<from>7</from>
+			<to>9</to>
 			<read>$</read>
 			<write>$</write>
 			<move>S</move>
@@ -108,6 +131,20 @@
 		<transition>
 			<from>8</from>
 			<to>6</to>
+			<read>$</read>
+			<write>$</write>
+			<move>S</move>
+		</transition>
+		<transition>
+			<from>10</from>
+			<to>11</to>
+			<read>$</read>
+			<write>$</write>
+			<move>S</move>
+		</transition>
+		<transition>
+			<from>9</from>
+			<to>10</to>
 			<read>$</read>
 			<write>$</write>
 			<move>S</move>
@@ -361,6 +398,13 @@ Example: $101.01#1.01110#</text>
 			</block>
 			<!--The list of transitions.-->
 			<transition>
+				<from>7</from>
+				<to>1</to>
+				<read>_</read>
+				<write>_</write>
+				<move>L</move>
+			</transition>
+			<transition>
 				<from>5</from>
 				<to>10</to>
 				<read>$</read>
@@ -369,8 +413,8 @@ Example: $101.01#1.01110#</text>
 			</transition>
 			<transition>
 				<from>1</from>
-				<to>8</to>
-				<read>#</read>
+				<to>2</to>
+				<read>0</read>
 				<write>_</write>
 				<move>R</move>
 			</transition>
@@ -382,10 +426,17 @@ Example: $101.01#1.01110#</text>
 				<move>L</move>
 			</transition>
 			<transition>
+				<from>0</from>
+				<to>6</to>
+				<read>#</read>
+				<write>Y</write>
+				<move>R</move>
+			</transition>
+			<transition>
 				<from>1</from>
-				<to>4</to>
-				<read>Y</read>
-				<write>#</write>
+				<to>3</to>
+				<read>1</read>
+				<write>_</write>
 				<move>R</move>
 			</transition>
 			<transition>
@@ -397,38 +448,17 @@ Example: $101.01#1.01110#</text>
 			</transition>
 			<transition>
 				<from>1</from>
-				<to>2</to>
-				<read>0</read>
+				<to>8</to>
+				<read>#</read>
 				<write>_</write>
 				<move>R</move>
 			</transition>
 			<transition>
-				<from>8</from>
-				<to>1</to>
-				<read>_</read>
-				<write>#</write>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>3</from>
-				<to>1</to>
-				<read>_</read>
-				<write>1</write>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>0</from>
-				<to>6</to>
-				<read>#</read>
-				<write>Y</write>
+				<from>1</from>
+				<to>9</to>
+				<read>.</read>
+				<write>_</write>
 				<move>R</move>
-			</transition>
-			<transition>
-				<from>9</from>
-				<to>1</to>
-				<read>_</read>
-				<write>.</write>
-				<move>L</move>
 			</transition>
 			<transition>
 				<from>1</from>
@@ -466,11 +496,25 @@ Example: $101.01#1.01110#</text>
 				<move>L</move>
 			</transition>
 			<transition>
-				<from>7</from>
+				<from>0</from>
+				<to>0</to>
+				<read>.</read>
+				<write>.</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>9</from>
 				<to>1</to>
 				<read>_</read>
-				<write>_</write>
+				<write>.</write>
 				<move>L</move>
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>4</to>
+				<read>Y</read>
+				<write>#</write>
+				<move>R</move>
 			</transition>
 			<transition>
 				<from>0</from>
@@ -484,13 +528,6 @@ Example: $101.01#1.01110#</text>
 				<to>0</to>
 				<read>1</read>
 				<write>1</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>0</from>
-				<to>0</to>
-				<read>.</read>
-				<write>.</write>
 				<move>R</move>
 			</transition>
 			<transition>
@@ -529,11 +566,11 @@ Example: $101.01#1.01110#</text>
 				<move>R</move>
 			</transition>
 			<transition>
-				<from>1</from>
-				<to>9</to>
-				<read>.</read>
-				<write>_</write>
-				<move>R</move>
+				<from>3</from>
+				<to>1</to>
+				<read>_</read>
+				<write>1</write>
+				<move>L</move>
 			</transition>
 			<transition>
 				<from>4</from>
@@ -543,11 +580,11 @@ Example: $101.01#1.01110#</text>
 				<move>L</move>
 			</transition>
 			<transition>
-				<from>1</from>
-				<to>3</to>
-				<read>1</read>
-				<write>_</write>
-				<move>R</move>
+				<from>8</from>
+				<to>1</to>
+				<read>_</read>
+				<write>#</write>
+				<move>L</move>
 			</transition>
 			<!--The list of automata-->
 			<Machine8/>
@@ -563,6 +600,7 @@ Example: $101.01#1.01110#</text>
 			<Machine5/>
 		</pad_Y_integer_with_a_0.jff>
 		<Machine7/>
+		<Machine11/>
 		<binary_integer_part_count.jff>
 			<!--The list of states.-->
 			<block id="0" name="q0">
@@ -1818,7 +1856,6 @@ If the decimal part of Y is bigger it replaces $ with Y at the left end</text>
 			<Machine6/>
 			<Machine5/>
 		</pad_X_decimal_with_a_0.jff>
-		<Machine2/>
 		<pad_X_integer_with_a_0.jff>
 			<!--The list of states.-->
 			<block id="0" name="q0">
@@ -2081,6 +2118,7 @@ If the decimal part of Y is bigger it replaces $ with Y at the left end</text>
 			<Machine6/>
 			<Machine5/>
 		</pad_X_integer_with_a_0.jff>
+		<Machine2/>
 		<shift_right_turing_machine.jff>
 			<!--The list of states.-->
 			<block id="0" name="q0">
