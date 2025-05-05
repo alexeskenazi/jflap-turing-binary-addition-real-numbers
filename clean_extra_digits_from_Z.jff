@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>
+	<type>turing</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="q0">
+			<x>146.0</x>
+			<y>221.0</y>
+			<initial/>
+		</state>
+		<state id="1" name="q1">
+			<x>301.0</x>
+			<y>220.0</y>
+			<label>Remove all trailling 0's</label>
+		</state>
+		<state id="2" name="q2">
+			<x>516.0</x>
+			<y>220.0</y>
+		</state>
+		<state id="3" name="q3">
+			<x>686.0</x>
+			<y>220.0</y>
+		</state>
+		<state id="4" name="q4">
+			<x>807.0</x>
+			<y>130.0</y>
+			<final/>
+		</state>
+		<state id="5" name="q5">
+			<x>799.0</x>
+			<y>341.0</y>
+			<final/>
+		</state>
+		<state id="6" name="q6">
+			<x>443.0</x>
+			<y>346.0</y>
+		</state>
+		<!--The list of transitions.-->
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read/>
+			<write/>
+			<move>L</move>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>0</read>
+			<write/>
+			<move>L</move>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>6</to>
+			<read>.</read>
+			<write>.</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>2</to>
+			<read>0</read>
+			<write>0</write>
+			<move>L</move>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>2</to>
+			<read>1</read>
+			<write>1</write>
+			<move>L</move>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>2</to>
+			<read>.</read>
+			<write>.</write>
+			<move>L</move>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>3</to>
+			<read>#</read>
+			<write>#</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>4</to>
+			<read>1</read>
+			<write>1</write>
+			<move>S</move>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read>1</read>
+			<write>1</write>
+			<move>L</move>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>#</read>
+			<write>#</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>0</read>
+			<write>0</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>1</read>
+			<write>1</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>.</read>
+			<write>.</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>3</to>
+			<read>0</read>
+			<write>0</write>
+			<move>R</move>
+		</transition>
+		<transition>
+			<from>6</from>
+			<to>2</to>
+			<read/>
+			<write>0</write>
+			<move>L</move>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>5</to>
+			<read>.</read>
+			<write>.</write>
+			<move>L</move>
+		</transition>
+		<note>
+			<text>Input is in the form #0001.10000
+we need to remove leading and trailing 0's</text>
+			<x>61.0</x>
+			<y>42.0</y>
+		</note>
+		<note>
+			<text>Go to the end</text>
+			<x>116.0</x>
+			<y>255.0</y>
+		</note>
+	</automaton>
+</structure>
