@@ -13,11 +13,6 @@
 			<x>352.0</x>
 			<y>147.0</y>
 		</block>
-		<block id="2" name="q2">
-			<tag>Machine2</tag>
-			<x>730.0</x>
-			<y>147.0</y>
-		</block>
 		<block id="3" name="pad_Y_decimal_with_a_0">
 			<tag>pad_Y_decimal_with_a_0.jff</tag>
 			<x>516.0</x>
@@ -151,13 +146,6 @@
 			<move>S</move>
 		</transition>
 		<transition>
-			<from>2</from>
-			<to>6</to>
-			<read>$</read>
-			<write>$</write>
-			<move>S</move>
-		</transition>
-		<transition>
 			<from>6</from>
 			<to>7</to>
 			<read>$</read>
@@ -172,16 +160,16 @@
 			<move>S</move>
 		</transition>
 		<transition>
-			<from>1</from>
-			<to>2</to>
-			<read>$</read>
+			<from>6</from>
+			<to>8</to>
+			<read>X</read>
 			<write>$</write>
 			<move>S</move>
 		</transition>
 		<transition>
-			<from>6</from>
-			<to>8</to>
-			<read>X</read>
+			<from>1</from>
+			<to>6</to>
+			<read>$</read>
 			<write>$</write>
 			<move>S</move>
 		</transition>
@@ -374,485 +362,6 @@ Example: $101.01#1.01110#</text>
 			</note>
 		</pad_Y_decimal_with_a_0.jff>
 		<Machine7/>
-		<clean_extra_digits_from_Z.jff>
-			<!--The list of states.-->
-			<block id="0" name="q0">
-				<tag>Machine0</tag>
-				<x>146.0</x>
-				<y>221.0</y>
-				<initial/>
-			</block>
-			<block id="1" name="q1">
-				<tag>Machine1</tag>
-				<x>301.0</x>
-				<y>220.0</y>
-			</block>
-			<block id="2" name="q2">
-				<tag>Machine2</tag>
-				<x>516.0</x>
-				<y>220.0</y>
-			</block>
-			<block id="3" name="q3">
-				<tag>Machine3</tag>
-				<x>686.0</x>
-				<y>220.0</y>
-			</block>
-			<block id="4" name="q4">
-				<tag>Machine4</tag>
-				<x>807.0</x>
-				<y>130.0</y>
-				<final/>
-			</block>
-			<block id="5" name="q5">
-				<tag>Machine5</tag>
-				<x>799.0</x>
-				<y>341.0</y>
-				<final/>
-			</block>
-			<block id="6" name="q6">
-				<tag>Machine6</tag>
-				<x>443.0</x>
-				<y>346.0</y>
-			</block>
-			<!--The list of transitions.-->
-			<transition>
-				<from>3</from>
-				<to>5</to>
-				<read>.</read>
-				<write>.</write>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>3</from>
-				<to>4</to>
-				<read>1</read>
-				<write>1</write>
-				<move>S</move>
-			</transition>
-			<transition>
-				<from>1</from>
-				<to>1</to>
-				<read>0</read>
-				<write/>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>6</from>
-				<to>2</to>
-				<read/>
-				<write>0</write>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>2</from>
-				<to>2</to>
-				<read>0</read>
-				<write>0</write>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>2</from>
-				<to>2</to>
-				<read>1</read>
-				<write>1</write>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>2</from>
-				<to>2</to>
-				<read>.</read>
-				<write>.</write>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>0</from>
-				<to>1</to>
-				<read/>
-				<write/>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>1</from>
-				<to>6</to>
-				<read>.</read>
-				<write>.</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>0</from>
-				<to>0</to>
-				<read>#</read>
-				<write>#</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>0</from>
-				<to>0</to>
-				<read>0</read>
-				<write>0</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>0</from>
-				<to>0</to>
-				<read>1</read>
-				<write>1</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>0</from>
-				<to>0</to>
-				<read>.</read>
-				<write>.</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>3</from>
-				<to>3</to>
-				<read>0</read>
-				<write>0</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>1</from>
-				<to>2</to>
-				<read>1</read>
-				<write>1</write>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>2</from>
-				<to>3</to>
-				<read>#</read>
-				<write>#</write>
-				<move>R</move>
-			</transition>
-			<!--The list of automata-->
-			<Machine0/>
-			<Machine2/>
-			<Machine1/>
-			<Machine4/>
-			<Machine3/>
-			<Machine6/>
-			<Machine5/>
-			<note>
-				<text>Input is in the form #0001.10000
-we need to remove leading and trailing 0's</text>
-				<x>0.0</x>
-				<y>0.0</y>
-			</note>
-			<note>
-				<text>Go to the end</text>
-				<x>0.0</x>
-				<y>0.0</y>
-			</note>
-		</clean_extra_digits_from_Z.jff>
-		<Machine11/>
-		<Add_Z_placeholder.jff>
-			<!--The list of states.-->
-			<block id="0" name="q0">
-				<tag>Machine0</tag>
-				<x>129.0</x>
-				<y>201.0</y>
-				<initial/>
-			</block>
-			<block id="1" name="q1">
-				<tag>Machine1</tag>
-				<x>391.0</x>
-				<y>76.0</y>
-			</block>
-			<block id="2" name="q2">
-				<tag>Machine2</tag>
-				<x>276.0</x>
-				<y>400.0</y>
-			</block>
-			<block id="3" name="q3">
-				<tag>Machine3</tag>
-				<x>492.0</x>
-				<y>383.0</y>
-				<final/>
-			</block>
-			<block id="6" name="rewind">
-				<tag>rewind.jff</tag>
-				<x>552.0</x>
-				<y>206.0</y>
-			</block>
-			<!--The list of transitions.-->
-			<transition>
-				<from>0</from>
-				<to>1</to>
-				<read>0</read>
-				<write>a</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>0</from>
-				<to>1</to>
-				<read>.</read>
-				<write>p</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>1</from>
-				<to>6</to>
-				<read/>
-				<write>z</write>
-				<move>S</move>
-			</transition>
-			<transition>
-				<from>0</from>
-				<to>1</to>
-				<read>1</read>
-				<write>b</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>0</from>
-				<to>2</to>
-				<read>#</read>
-				<write>#</write>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>2</from>
-				<to>2</to>
-				<read>a</read>
-				<write>0</write>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>2</from>
-				<to>2</to>
-				<read>p</read>
-				<write>.</write>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>2</from>
-				<to>2</to>
-				<read>0</read>
-				<write>0</write>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>2</from>
-				<to>2</to>
-				<read>1</read>
-				<write>1</write>
-				<move>L</move>
-			</transition>
-			<transition>
-				<from>2</from>
-				<to>3</to>
-				<read>$</read>
-				<write>$</write>
-				<move>S</move>
-			</transition>
-			<transition>
-				<from>0</from>
-				<to>0</to>
-				<read>p</read>
-				<write>p</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>0</from>
-				<to>0</to>
-				<read>$</read>
-				<write>$</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>0</from>
-				<to>0</to>
-				<read>a</read>
-				<write>a</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>0</from>
-				<to>0</to>
-				<read>b</read>
-				<write>b</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>1</from>
-				<to>1</to>
-				<read>0</read>
-				<write>0</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>1</from>
-				<to>1</to>
-				<read>1</read>
-				<write>1</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>1</from>
-				<to>1</to>
-				<read>.</read>
-				<write>.</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>1</from>
-				<to>1</to>
-				<read>#</read>
-				<write>#</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>1</from>
-				<to>1</to>
-				<read>z</read>
-				<write>z</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>6</from>
-				<to>0</to>
-				<read>$</read>
-				<write>$</write>
-				<move>R</move>
-			</transition>
-			<transition>
-				<from>2</from>
-				<to>2</to>
-				<read>b</read>
-				<write>1</write>
-				<move>L</move>
-			</transition>
-			<!--The list of automata-->
-			<Machine0/>
-			<Machine2/>
-			<Machine1/>
-			<rewind.jff>
-				<!--The list of states.-->
-				<block id="0" name="q0">
-					<tag>Machine0</tag>
-					<x>129.0</x>
-					<y>201.0</y>
-					<initial/>
-				</block>
-				<block id="1" name="q1">
-					<tag>Machine1</tag>
-					<x>327.0</x>
-					<y>204.0</y>
-					<final/>
-				</block>
-				<!--The list of transitions.-->
-				<transition>
-					<from>0</from>
-					<to>1</to>
-					<read>n</read>
-					<write>$</write>
-					<move>S</move>
-				</transition>
-				<transition>
-					<from>0</from>
-					<to>1</to>
-					<read>$</read>
-					<write>$</write>
-					<move>S</move>
-				</transition>
-				<transition>
-					<from>0</from>
-					<to>1</to>
-					<read>c</read>
-					<write>$</write>
-					<move>S</move>
-				</transition>
-				<transition>
-					<from>0</from>
-					<to>0</to>
-					<read>0</read>
-					<write>0</write>
-					<move>L</move>
-				</transition>
-				<transition>
-					<from>0</from>
-					<to>0</to>
-					<read>1</read>
-					<write>1</write>
-					<move>L</move>
-				</transition>
-				<transition>
-					<from>0</from>
-					<to>0</to>
-					<read>.</read>
-					<write>.</write>
-					<move>L</move>
-				</transition>
-				<transition>
-					<from>0</from>
-					<to>0</to>
-					<read>#</read>
-					<write>#</write>
-					<move>L</move>
-				</transition>
-				<transition>
-					<from>0</from>
-					<to>0</to>
-					<read>a</read>
-					<write>a</write>
-					<move>L</move>
-				</transition>
-				<transition>
-					<from>0</from>
-					<to>0</to>
-					<read>b</read>
-					<write>b</write>
-					<move>L</move>
-				</transition>
-				<transition>
-					<from>0</from>
-					<to>0</to>
-					<read>Y</read>
-					<write>Y</write>
-					<move>L</move>
-				</transition>
-				<transition>
-					<from>0</from>
-					<to>0</to>
-					<read>z</read>
-					<write>z</write>
-					<move>L</move>
-				</transition>
-				<transition>
-					<from>0</from>
-					<to>0</to>
-					<read>p</read>
-					<write>p</write>
-					<move>L</move>
-				</transition>
-				<!--The list of automata-->
-				<Machine0/>
-				<Machine1/>
-				<note>
-					<text>Rewind to the beginning
-if $ leave $
-if c replace with $
-if n replace with $</text>
-					<x>0.0</x>
-					<y>0.0</y>
-				</note>
-			</rewind.jff>
-			<Machine3/>
-			<note>
-				<text>Found non-marked char</text>
-				<x>0.0</x>
-				<y>0.0</y>
-			</note>
-			<note>
-				<text>For evey char in X including the . 
-add a z placeholder at the end</text>
-				<x>0.0</x>
-				<y>0.0</y>
-			</note>
-		</Add_Z_placeholder.jff>
 		<pad_Y_integer_with_a_0.jff>
 			<!--The list of states.-->
 			<block id="0" name="q0">
@@ -1115,6 +624,180 @@ add a z placeholder at the end</text>
 			<Machine6/>
 			<Machine5/>
 		</pad_Y_integer_with_a_0.jff>
+		<clean_extra_digits_from_Z.jff>
+			<!--The list of states.-->
+			<block id="0" name="q0">
+				<tag>Machine0</tag>
+				<x>146.0</x>
+				<y>221.0</y>
+				<initial/>
+			</block>
+			<block id="1" name="q1">
+				<tag>Machine1</tag>
+				<x>301.0</x>
+				<y>220.0</y>
+			</block>
+			<block id="2" name="q2">
+				<tag>Machine2</tag>
+				<x>516.0</x>
+				<y>220.0</y>
+			</block>
+			<block id="3" name="q3">
+				<tag>Machine3</tag>
+				<x>686.0</x>
+				<y>220.0</y>
+			</block>
+			<block id="4" name="q4">
+				<tag>Machine4</tag>
+				<x>807.0</x>
+				<y>130.0</y>
+				<final/>
+			</block>
+			<block id="5" name="q5">
+				<tag>Machine5</tag>
+				<x>799.0</x>
+				<y>341.0</y>
+				<final/>
+			</block>
+			<block id="6" name="q6">
+				<tag>Machine6</tag>
+				<x>443.0</x>
+				<y>346.0</y>
+			</block>
+			<!--The list of transitions.-->
+			<transition>
+				<from>3</from>
+				<to>5</to>
+				<read>.</read>
+				<write>.</write>
+				<move>L</move>
+			</transition>
+			<transition>
+				<from>3</from>
+				<to>4</to>
+				<read>1</read>
+				<write>1</write>
+				<move>S</move>
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>1</to>
+				<read>0</read>
+				<write/>
+				<move>L</move>
+			</transition>
+			<transition>
+				<from>6</from>
+				<to>2</to>
+				<read/>
+				<write>0</write>
+				<move>L</move>
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>2</to>
+				<read>0</read>
+				<write>0</write>
+				<move>L</move>
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>2</to>
+				<read>1</read>
+				<write>1</write>
+				<move>L</move>
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>2</to>
+				<read>.</read>
+				<write>.</write>
+				<move>L</move>
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>1</to>
+				<read/>
+				<write/>
+				<move>L</move>
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>6</to>
+				<read>.</read>
+				<write>.</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>0</to>
+				<read>#</read>
+				<write>#</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>0</to>
+				<read>0</read>
+				<write>0</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>0</to>
+				<read>1</read>
+				<write>1</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>0</to>
+				<read>.</read>
+				<write>.</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>3</from>
+				<to>3</to>
+				<read>0</read>
+				<write>0</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>2</to>
+				<read>1</read>
+				<write>1</write>
+				<move>L</move>
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>3</to>
+				<read>#</read>
+				<write>#</write>
+				<move>R</move>
+			</transition>
+			<!--The list of automata-->
+			<Machine0/>
+			<Machine2/>
+			<Machine1/>
+			<Machine4/>
+			<Machine3/>
+			<Machine6/>
+			<Machine5/>
+			<note>
+				<text>Input is in the form #0001.10000
+we need to remove leading and trailing 0's</text>
+				<x>0.0</x>
+				<y>0.0</y>
+			</note>
+			<note>
+				<text>Go to the end</text>
+				<x>0.0</x>
+				<y>0.0</y>
+			</note>
+		</clean_extra_digits_from_Z.jff>
+		<Machine11/>
 		<binary_integer_part_count.jff>
 			<!--The list of states.-->
 			<block id="0" name="q0">
@@ -2356,7 +2039,6 @@ If the decimal part of Y is bigger it replaces $ with Y at the left end</text>
 			<Machine6/>
 			<Machine5/>
 		</pad_X_decimal_with_a_0.jff>
-		<Machine2/>
 		<pad_X_integer_with_a_0.jff>
 			<!--The list of states.-->
 			<block id="0" name="q0">
@@ -2817,6 +2499,311 @@ If the decimal part of Y is bigger it replaces $ with Y at the left end</text>
 				<y>0.0</y>
 			</note>
 		</shift_right_turing_machine.jff>
+		<Add_Z_placeholder.jff>
+			<!--The list of states.-->
+			<block id="0" name="q0">
+				<tag>Machine0</tag>
+				<x>129.0</x>
+				<y>201.0</y>
+				<initial/>
+			</block>
+			<block id="1" name="q1">
+				<tag>Machine1</tag>
+				<x>391.0</x>
+				<y>76.0</y>
+			</block>
+			<block id="2" name="q2">
+				<tag>Machine2</tag>
+				<x>276.0</x>
+				<y>400.0</y>
+			</block>
+			<block id="3" name="q3">
+				<tag>Machine3</tag>
+				<x>492.0</x>
+				<y>383.0</y>
+				<final/>
+			</block>
+			<block id="6" name="rewind">
+				<tag>rewind.jff</tag>
+				<x>552.0</x>
+				<y>206.0</y>
+			</block>
+			<!--The list of transitions.-->
+			<transition>
+				<from>0</from>
+				<to>1</to>
+				<read>0</read>
+				<write>a</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>1</to>
+				<read>.</read>
+				<write>p</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>6</to>
+				<read/>
+				<write>z</write>
+				<move>S</move>
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>1</to>
+				<read>1</read>
+				<write>b</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>2</to>
+				<read>#</read>
+				<write>#</write>
+				<move>L</move>
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>2</to>
+				<read>a</read>
+				<write>0</write>
+				<move>L</move>
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>2</to>
+				<read>p</read>
+				<write>.</write>
+				<move>L</move>
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>2</to>
+				<read>0</read>
+				<write>0</write>
+				<move>L</move>
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>2</to>
+				<read>1</read>
+				<write>1</write>
+				<move>L</move>
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>3</to>
+				<read>$</read>
+				<write>$</write>
+				<move>S</move>
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>0</to>
+				<read>p</read>
+				<write>p</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>0</to>
+				<read>$</read>
+				<write>$</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>0</to>
+				<read>a</read>
+				<write>a</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>0</to>
+				<read>b</read>
+				<write>b</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>1</to>
+				<read>0</read>
+				<write>0</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>1</to>
+				<read>1</read>
+				<write>1</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>1</to>
+				<read>.</read>
+				<write>.</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>1</to>
+				<read>#</read>
+				<write>#</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>1</to>
+				<read>z</read>
+				<write>z</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>6</from>
+				<to>0</to>
+				<read>$</read>
+				<write>$</write>
+				<move>R</move>
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>2</to>
+				<read>b</read>
+				<write>1</write>
+				<move>L</move>
+			</transition>
+			<!--The list of automata-->
+			<Machine0/>
+			<Machine2/>
+			<Machine1/>
+			<rewind.jff>
+				<!--The list of states.-->
+				<block id="0" name="q0">
+					<tag>Machine0</tag>
+					<x>129.0</x>
+					<y>201.0</y>
+					<initial/>
+				</block>
+				<block id="1" name="q1">
+					<tag>Machine1</tag>
+					<x>327.0</x>
+					<y>204.0</y>
+					<final/>
+				</block>
+				<!--The list of transitions.-->
+				<transition>
+					<from>0</from>
+					<to>1</to>
+					<read>n</read>
+					<write>$</write>
+					<move>S</move>
+				</transition>
+				<transition>
+					<from>0</from>
+					<to>1</to>
+					<read>$</read>
+					<write>$</write>
+					<move>S</move>
+				</transition>
+				<transition>
+					<from>0</from>
+					<to>1</to>
+					<read>c</read>
+					<write>$</write>
+					<move>S</move>
+				</transition>
+				<transition>
+					<from>0</from>
+					<to>0</to>
+					<read>0</read>
+					<write>0</write>
+					<move>L</move>
+				</transition>
+				<transition>
+					<from>0</from>
+					<to>0</to>
+					<read>1</read>
+					<write>1</write>
+					<move>L</move>
+				</transition>
+				<transition>
+					<from>0</from>
+					<to>0</to>
+					<read>.</read>
+					<write>.</write>
+					<move>L</move>
+				</transition>
+				<transition>
+					<from>0</from>
+					<to>0</to>
+					<read>#</read>
+					<write>#</write>
+					<move>L</move>
+				</transition>
+				<transition>
+					<from>0</from>
+					<to>0</to>
+					<read>a</read>
+					<write>a</write>
+					<move>L</move>
+				</transition>
+				<transition>
+					<from>0</from>
+					<to>0</to>
+					<read>b</read>
+					<write>b</write>
+					<move>L</move>
+				</transition>
+				<transition>
+					<from>0</from>
+					<to>0</to>
+					<read>Y</read>
+					<write>Y</write>
+					<move>L</move>
+				</transition>
+				<transition>
+					<from>0</from>
+					<to>0</to>
+					<read>z</read>
+					<write>z</write>
+					<move>L</move>
+				</transition>
+				<transition>
+					<from>0</from>
+					<to>0</to>
+					<read>p</read>
+					<write>p</write>
+					<move>L</move>
+				</transition>
+				<!--The list of automata-->
+				<Machine0/>
+				<Machine1/>
+				<note>
+					<text>Rewind to the beginning
+if $ leave $
+if c replace with $
+if n replace with $</text>
+					<x>0.0</x>
+					<y>0.0</y>
+				</note>
+			</rewind.jff>
+			<Machine3/>
+			<note>
+				<text>Found non-marked char</text>
+				<x>0.0</x>
+				<y>0.0</y>
+			</note>
+			<note>
+				<text>For evey char in X including the . 
+add a z placeholder at the end</text>
+				<x>0.0</x>
+				<y>0.0</y>
+			</note>
+		</Add_Z_placeholder.jff>
 		<add_X_and_Y.jff>
 			<!--The list of states.-->
 			<block id="0" name="c=0">
