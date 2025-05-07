@@ -41,6 +41,12 @@ This implementation uses multiple JFLAP files that work together:
   - Padding numbers with zeros
   - Cleaning extra digits
 
+### Binary Addition Block Diagram
+
+The following diagram shows the logic for the main addition block that performs binary addition:
+
+![Binary Addition Block Diagram](add_X_and_Y_main_block_diagram.png)
+
 ## Test Cases
 
 
