@@ -43,7 +43,64 @@ This implementation uses multiple JFLAP files that work together:
 
 ### Binary Addition Block Diagram
 
-The following diagram shows the logic for the main addition block that performs binary addition:
+This is the core Turing-machine module that takes two equal-length binary numbers (including a "decimal" point) and adds them bit-wise with carry.  It assumes the input is laid out on the tape as $ X . X … X # Y . Y … Y#zzzzzzzzzzz
+
+where:
+
+- **`X` and `Y`** are the two binary operands (each having exactly one `.` and the same number of digits on each side).  
+- **`$`** (or sometimes written as `n`) in the leftmost cell is the **no-carry flag**; when a carry is generated it is replaced by `c`.  
+- ** `z` at end is a placeholder for the output. There should be as many `z` as bits in `X` and `Y`plus the decimal point. 
+For example, 0.1010#0.0101#zzzzzzz
+
+### Tape-symbol conventions
+
+| Symbol | Meaning                              |
+|:------:|:-------------------------------------|
+| `0`, `1` | unprocessed bits of X or Y           |
+| `.`      | radix (decimal) point                |
+| `#`      | separator between X and Y            |
+| `$` or `n` | no carry pending                    |
+| `c`      | carry pending                        |
+| `a`      | processed a “0” bit (marked)         |
+| `b`      | processed a “1” bit (marked)         |
+
+### High-level operation
+
+1. **Initialize**  
+   - Head begins on the leftmost carry-flag cell (`$`/`n`).  
+   - `X` and `Y` have been prepended with an extra 0 if necessary to accommodate a final carry.
+
+2. **Find least-significant digit**  
+   - Move right, skipping (`$`→`) until you hit the rightmost bit of Y.  
+   - Proceed leftward, one tape cell at a time.
+
+3. **Loop over bit-pairs**  
+   For each column (starting from the least significant bit of the fractional part, then moving left through the integer part):
+
+   - Read the carry flag (`$`/`n` or `c`).  
+   - Read one bit from X and one bit from Y.  
+   - Compute `sum = X_bit + Y_bit + carry`.  
+   - Write the result bit back into X’s position (as `0`/`1`), then **mark** the original X and Y cells:
+     - Replace processed `0` → `a`, processed `1` → `b`.  
+   - Update the carry flag:
+     - If `sum ≥ 2`, write `c` in the flag cell and write `sum - 2` as the result bit.  
+     - Otherwise write `$` (no carry) and write `sum` as the result bit.  
+
+4. **Rewind and repeat**  
+   - After each column, the machine rewinds back to the carry-flag cell to fetch the updated carry.  
+   - Then it moves right again into the next column to the left.
+
+5. **Finish**  
+   - Once both X and Y bits (including the radix point) have been processed and marked, if a final carry (`c`) remains, the machine writes a new leading `1`.  
+   - Finally, it rewinds to the left end and enters the halting state.
+
+---
+
+This design ensures:
+
+- **Decimal alignment**: the TM handles the radix point just like any other symbol, so fractional and integer bits are processed in one unified loop.  
+- **Carry tracking**: the single‐cell carry flag makes ripple-carry straightforward—no extra states are needed to “remember” carry apart from that one symbol.  
+- **In-place marking**: by turning used bits into `a`/`b`, the machine never re-reads the same bit twice, guaranteeing progress toward halting.
 
 ![Binary Addition Block Diagram](add_X_and_Y_main_block_diagram.png)
 
